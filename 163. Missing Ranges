@@ -1,0 +1,16 @@
+class Solution:
+    def findMissingRanges(self, nums: List[int], lower: int, upper: int) -> List[List[int]]:
+        ans = []
+        # iterate all the numbers in the array
+        for num in nums:
+           
+            if num > lower:
+                ans.append([lower, num - 1])
+
+            # otherwise, update the lower to the next integer after current number
+            lower = num + 1
+
+        if lower <= upper:
+            ans.append([lower, upper])
+
+        return ans
