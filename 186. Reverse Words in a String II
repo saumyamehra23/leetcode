@@ -1,0 +1,12 @@
+  void reverseWords(vector<char>& s) {
+	reverse(begin(s), end(s));	
+	vector<char>::iterator start_itr=s.begin();
+	vector<char>::iterator end_itr;
+	
+    	   while(start_itr <s.end()){		
+		end_itr = find(start_itr, s.end(), ' ');
+		reverse(start_itr, end_itr);
+		start_itr = end_itr+1;
+	    }
+    }
+        
